@@ -25,4 +25,15 @@ feature {NONE} -- Implementation
 			Result.register_log_writer (writer)
 		end
 
+feature {NONE} -- Implementation: Syslog
+
+	syslog_protocol
+		note
+			EIS: "src=https://tools.ietf.org/html/rfc5424"
+		do
+
+		end
+
+
+
 end
