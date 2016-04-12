@@ -12,14 +12,14 @@ feature -- Acces
 
 feature {NONE} -- Implementation
 
-	writer: LOG_ROLLING_WRITER_FILE
+	writer: separate LOG_ROLLING_WRITER_FILE
 		once ("process")
 			create Result.make_at_location (create {PATH}.make_from_string ("system.log"))
 			Result.set_max_file_size (1000000)
 			Result.enable_debug_log_level
 		end
 
-	logger: LOG_LOGGING_FACILITY
+	logger: separate LOG_LOGGING_FACILITY
 		once ("process")
 			create Result.make
 			Result.register_log_writer (writer)
