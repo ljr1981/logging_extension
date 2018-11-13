@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-15-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-15-0 http://www.eiffel.com/developers/xml/configuration-1-15-0.xsd" name="logging_extension" uuid="1F294FF1-6732-2D4A-6262-00003A363524" library_target="logging_extension">
+<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-18-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-18-0 http://www.eiffel.com/developers/xml/configuration-1-18-0.xsd" name="logging_extension" uuid="1F294FF1-6732-2D4A-6262-00003A363524" library_target="logging_extension">
 	<description>logging_extension implementation</description>
 	<target name="logging_extension">
 		<root all_classes="true"/>
-		<option warning="true" void_safety="transitional" syntax="provisional">
+		<option warning="true" syntax="provisional" manifest_array_type="mismatch_warning">
 			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
 		</option>
 		<setting name="console_application" value="true"/>
-		<setting name="concurrency" value="none"/>
+		<capability>
+			<concurrency support="none" use="thread"/>
+			<void_safety support="transitional" use="transitional"/>
+		</capability>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
 		<library name="logging" location="$ISE_LIBRARY\library\runtime\logging\logging-safe.ecf"/>
 		<library name="net" location="$ISE_LIBRARY\library\net\net-safe.ecf"/>
@@ -38,7 +41,9 @@
 		<option profile="false">
 		</option>
 		<setting name="console_application" value="false"/>
-		<setting name="concurrency" value="none"/>
+		<capability>
+			<concurrency support="none" use="thread"/>
+		</capability>
 		<library name="testing" location="$ISE_LIBRARY\library\testing\testing-safe.ecf"/>
 		<cluster name="tests" location=".\tests\" recursive="true"/>
 	</target>
